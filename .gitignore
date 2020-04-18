@@ -1,0 +1,8 @@
+.idea/
+app/config.json
+.DS_Store
+ct247/settings.py
+daybook/settings.py
+settings.py
+config.json
+db.sqlite3
