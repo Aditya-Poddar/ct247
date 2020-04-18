@@ -1,23 +1,36 @@
 from django.db import models
-image = models.ImageField(upload_to='media')
-
 
 # Create your models here.
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    def __str__(self):
-        return self.question_text
 
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-    def __str__(self):
-        return self.choice_text
-
-class Attendance(models.Model):
-    emp_id = models.CharField(max_length=200)
-    emp_name = models.CharField(max_length=200)
+class user_attendance(models.Model):
+    emp_id = models.CharField(max_length=10)
+    emp_name = models.CharField(max_length=50)
     attend_date = models.DateTimeField('date published')
     attend_status = models.CharField(max_length=1)
+    emp_overtime = models.TimeField(default=0)
+
+
+class user_auth(models.Model):
+    user_name = models.CharField(max_length=20)
+    user_email = models.EmailField()
+    emp_id = models.CharField(max_length=10)
+    user_title = models.CharField(max_length=30)
+
+class emp_data(models.Model):
+    emp_id = models.CharField(max_length=10)
+    emp_name = models.CharField(max_length=50)
+    emp_dob = models.DateField('date published')
+    emp_gender = models.CharField(max_length=8)
+    emp_fname = models.CharField(max_length=50)
+    emp_addr = models.CharField(max_length=50)
+    emp_position = models.CharField(max_length=50)
+    emp_email = models.EmailField()
+    emp_mnumber = models.IntegerField()
+    emp_salary = models.IntegerField()
+    dept_code = models.CharField(max_length=30)
+
+class user_roles(models.Model):
+    emp_id = models.CharField(max_length=10)
+    user_role = models.CharField(max_length=5)
+
+

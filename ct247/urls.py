@@ -15,7 +15,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-#from django.contrib import admin
+from django.contrib import admin
 from django.urls import include
 from . import settings
 from django.contrib.staticfiles.urls import static
@@ -28,7 +28,8 @@ from daybook.urls import  path
 
 urlpatterns = [
      path('', daybook.views.home, name='home'),
-     path('daybook/', include(daybook.urls))
+     path('daybook/', include(daybook.urls)),
+     path('admin/', admin.site.urls)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
