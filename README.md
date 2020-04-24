@@ -1,7 +1,7 @@
 # This is First Testing App to learn Django framework with App.
 
 #Requirements
-#install below package 
+#install below package from requirement.txt
 python3, django
 
 #Get clone

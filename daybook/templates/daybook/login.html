@@ -85,9 +85,9 @@
 
     <h2></h2>
     <!--Step 1 : Adding HTML-->
-    <form action="/action_page.php">
+    <form action="", method = "post" accept-charset="utf-8">{% csrf_token %}
         <div class="imgcontainer">
-            <img src="{% static '/images/img_avatar2.png' %}"
+            <img src="{% static '/user/images/img_avatar2.png' %}"
                  alt="Avatar" class="avatar">
         </div>
 
@@ -102,6 +102,9 @@
             <div class="vertical-center">
               <button type="submit">Login</button> </div>
             <input type="checkbox" checked="checked"> Remember me
+            <br>
+            <br>
+            <p>Don't have an account? <a href="http://127.0.0.1:8000/daybook/">Click Here!</a>.</p>
         </div>
     </form>
 

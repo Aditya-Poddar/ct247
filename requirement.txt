@@ -1,0 +1,5 @@
+djangorestframework
+psycopg2-binary
+requests
+python==3.7
+django==2.2.5

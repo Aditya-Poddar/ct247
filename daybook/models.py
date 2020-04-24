@@ -15,6 +15,7 @@ class user_auth(models.Model):
     user_email = models.EmailField()
     emp_id = models.CharField(max_length=10)
     user_title = models.CharField(max_length=30)
+    created_at = models.DateField()
 
 class emp_data(models.Model):
     emp_id = models.CharField(max_length=10)
